@@ -1,0 +1,730 @@
+
+/* ■■■■■■ 기본 설정 ■■■■■■ */
+:root {
+    --mcdonald-red: rgb(219,0,7);
+    --mcdonald-orange: rgb(239,142,27);
+    --mcdonald-yellow: rgb(252,181,20);
+    --mcdonald-green: rgb(35,94,59);
+    --mcdonald-bggray: rgb(249,249,249);
+    --mcdonald-lightgray: rgb(215,215,215);
+    --mcdonald-gray: rgb(132,132,132);
+    --mcdonald-footer: rgb(51,51,51);
+    --mcdonald-black: rgb(29, 29, 27);
+
+    --shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.07);
+}
+
+/* ■■■■■■ 폰트 설정 ■■■■■■ */
+@font-face {
+    font-family: 'Pretendard';
+    src: url(fonts/PretendardVariable.ttf);
+}
+
+/* ■■■■■■ 설정 초기화 ■■■■■■ */
+html {scroll-behavior: smooth;}
+*{padding:0; margin:0; }
+li{list-style:none; }
+a{text-decoration:none; font-size:14px; color: black;}
+body{font-family: 'Pretendard'; color: var(--mcdonald-black); }
+
+/* ■■■■■■ 내비게이션 ■■■■■■ */
+.navigation{
+    width: 100%;
+    height: 110px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    float: left;
+    background-color: #fff;
+}
+
+.navigation .nav_wrap {
+    box-sizing: border-box;
+    width: 1185px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+}
+
+.navigation .nav_wrap img {
+    margin-top: 25px;
+}
+
+.menu {
+    float: right;
+    width: 950px;
+    overflow: hidden;
+    margin: 150px auto;
+    margin-top: -60px;
+}
+
+.menu > li {
+    width: 20%; /*20*5=100%*/
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    background-color: #fff;
+}
+
+.menu a {
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 850;
+    margin-top: 43px;
+    color: var(--mcdonald-black);
+}
+
+.submenu > li {
+    line-height: 50px;
+    background-color: #fff;
+    
+}
+
+.submenu {
+    height: 0; /*ul의 높이를 안보이게 처리*/
+    overflow: hidden;
+}
+
+.submenu a {
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 43px;
+    color: var(--mcdonald-black);
+}
+
+.submenu_short > li {
+    line-height: 50px;
+    background-color: #fff;
+    
+}
+
+.submenu_short {
+    height: 0; /*ul의 높이를 안보이게 처리*/
+    overflow: hidden;
+}
+
+.submenu_short a {
+    font-family: Pretendard;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 43px;
+    color: var(--mcdonald-black);
+}
+
+/*마우스오버했을 때 서브메뉴 드롭다운으로 띄우기*/
+.menu > li:hover {
+    background-color: #fff;
+    transition-duration: 0.3s;
+}
+
+.menu > li a:hover {
+    color: var(--mcdonald-red);
+}
+
+.menu > li .minimenu a:hover {
+    color: #fff;
+}
+
+.menu > li:hover .submenu {
+    height: 320px; /*서브메뉴 li한개의 높이 50*5*/
+    transition-duration: 0.7s;
+}
+
+.menu > li:hover .submenu_short {
+    height: 170px; /*서브메뉴 li한개의 높이 50*5*/
+    transition-duration: 0.7s;
+}
+
+.minimenu li {
+    float: right;
+    margin-left: 5px;
+}
+
+.minimenu li:nth-child(3) {
+    margin-left: 0;
+}
+
+.minimenu li button {
+    width: 60px;
+    height: 24px;
+    border-radius: 15px;
+    border: none;
+}
+
+/*버튼 색상 설정*/
+.minimenu li:nth-child(3) button {
+    background-color: var(--mcdonald-red);
+}
+.minimenu li:nth-child(2) button {
+    background-color: var(--mcdonald-orange);
+}
+.minimenu li:nth-child(1) button {
+    background-color: var(--mcdonald-green);
+}
+
+.minimenu li a {
+    font-family: Pretendard;
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 43px;
+    color: #fff;
+}
+
+/* ■■■■■■ 배너 ■■■■■■ */
+.banner {
+    width: 100%;
+    height: 543px;
+    margin-top: 110px;
+    overflow: hidden;
+}
+
+/* ■■■■■■ 백투탑 플로팅 버튼 ■■■■■■ */
+.arrow-up {
+    cursor: pointer;
+    position: fixed;
+    bottom: 90px;
+    right: 155px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: var(--mcdonald-lightgray);
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .3s;
+    transition: 0.3s;
+    background-image: url(images/icon/arrow_up.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    z-index: 11;
+}
+
+.arrow-up:hover {
+    transform: scale(0.98);
+    background-color: rgb(200,200,200);
+}
+
+.arrow-up.show {
+    opacity: 1;
+}
+
+/* ■■■■■■ 인터랙션 섹션 ■■■■■■ */
+.interaction {
+    width: 1185px;
+    margin: auto;
+    position: relative;
+}
+
+/* ■■■■■■ 검색바 ■■■■■■ */
+.interaction .searchbar {
+    position: absolute;
+    top: -41px;
+}
+
+.interaction .searchbar input {
+    width: 524px;
+    height: 81px;
+    box-sizing: border-box;
+    background-image: url(images/icon/search.png);
+    background-repeat: no-repeat;
+    background-position: 450px ;
+    font-family: Pretendard;
+    font-size: 24.59px;
+    font-weight: 500;
+    padding-left: 46px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+}
+
+.interaction .searchbar input:focus {
+    outline: none;
+}
+
+.interaction .searchbar input :focus {
+    outline: none;
+}
+
+/* ■■■■■■ 주문 버튼 / 주문 조회 버튼 박스 ■■■■■■ */
+.button_wrap {
+    width: 593px;
+    position: absolute;
+    top: -41px;
+    right: 0;
+}
+
+.button_wrap button {
+    float: left;
+    width: 287px;
+    height: 125px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+/*-------------마우스 오버 시 버튼 애니메이션-------------*/
+.button_wrap button:hover {
+    transform: translate(0,-10px);
+}
+
+.button_wrap a span {
+    font-family: Pretendard;
+    font-size: 24.55px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.button_wrap .button_order button {
+    background-color: var(--mcdonald-red);
+    margin-right: 16px;
+}
+
+.button_wrap .button_history button {
+    background-color: var(--mcdonald-yellow);
+}
+
+
+/* ■■■■■■ 첫 번째 콘텐츠 박스 ■■■■■■ */
+.box1 {
+    width: 1185px;
+    height: 650px;
+    margin: auto;
+}
+
+/* ■■■■■■ 나의 주문내역 ■■■■■■ */
+.box1 .order_wrap {
+    float: left;
+    position: relative;
+    margin-top: 216px;
+    width: 670px;
+    height: 432px;
+}
+
+.box1 .order_wrap .title .left {
+    position: absolute;
+    width: 490px;
+    height: 62px;
+}
+
+.box1 h2 {
+    font-family: Pretendard;
+    font-size: 35.92px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.box1 p {
+    font-family: Pretendard;
+    font-size: 14.02px;
+    font-weight: 400;
+    color: var(--mcdonald-gray);
+}
+
+.box1 .order_wrap .title .right {
+    position: absolute;
+    right: 0;
+}
+
+/*-------------더보기 버튼 설정-------------*/
+.box1 button {
+    transition: 0.3s;
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    background-color: var(--mcdonald-lightgray);
+    border: none;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.box1 button:hover {
+    background-color: var(--mcdonald-yellow);
+}
+
+/*-------------주문내역 목록-------------*/
+.box1 .order_wrap .contents {
+    /* outline: auto; */
+    width: 670px;
+    height: 430px;
+}
+
+/*-------------수평으로 정렬-------------*/
+.contents_box1 .left, .contents_box1 .middle, .contents_box2 .left, .contents_box2 .middle {
+    float: left;
+}
+
+/*-------------첫번째 주문목록-------------*/
+.box1 .order_wrap .contents .contents_box1 {
+    transition: 0.3s;
+    position: absolute;
+    top: 86px;
+    box-sizing: border-box;
+    width: 670px;
+    height: 158px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+.box1 .order_wrap .contents .contents_box1 .left img {
+    height: 110px;
+    margin-left: 30px;
+    margin-top: 23px;
+}
+
+.box1 .order_wrap .contents .middle {
+    margin-top: 36px;
+}
+
+.box1 .order_wrap .contents .middle h3 {
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--mcdonald-black);
+}
+
+.box1 .order_wrap .contents .middle p {
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.box1 .order_wrap .contents .right {
+    position: absolute;
+    top: 63px;
+    right: 45px;
+}
+/* 마우스오버 효과 */
+.box1 .order_wrap .contents .contents_box1:hover {
+    transform: scale(0.98);
+    background-color: rgb(250, 250, 250);
+    box-shadow: none;
+}
+
+/*-------------두번째 주문목록-------------*/
+.box1 .order_wrap .contents .contents_box2 {
+    transition: 0.3s;
+    position: absolute;
+    top: 272px;
+    box-sizing: border-box;
+    width: 670px;
+    height: 158px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+.box1 .order_wrap .contents .contents_box2 .left img {
+    height: 110px;
+    margin-left: 30px;
+    margin-top: 23px;
+}
+/* 마우스오버 효과 */
+.box1 .order_wrap .contents .contents_box2:hover {
+    transform: scale(0.98);
+    background-color: rgb(250, 250, 250);
+    box-shadow: none;
+}
+
+/* ■■■■■■ 즐겨찾기 메뉴 ■■■■■■ */
+
+/*-------------영역 설정-------------*/
+.box1 .fav_wrap {
+    position: relative;
+    float: left;
+    margin-left: 51px;
+    margin-top: 216px;
+    width: 464px;
+    height: 430px;
+}
+
+/*-------------제목 설정-------------*/
+.box1 .fav_wrap .title .left {
+    position: absolute;
+    width: 290px;
+    height: 62px;
+}
+.box1 h2 {
+    font-family: Pretendard;
+    font-size: 35.92px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.box1 p {
+    font-family: Pretendard;
+    font-size: 14.02px;
+    font-weight: 400;
+    color: var(--mcdonald-gray);
+}
+
+/*-------------더보기 아이콘 설정-------------*/
+.box1 .fav_wrap .title .right {
+    position: absolute;
+    right: 0px;
+}
+
+/*-------------즐겨찾기 메뉴 박스-------------*/
+.box1 .fav_wrap .contents {
+    position: absolute;
+    top: 86px;
+    box-sizing: border-box;
+    width: 464px;
+    height: 343px;
+    background-image: url(images/icon/heart.png);
+    background-repeat: no-repeat;
+    background-position: 380px 43px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+/*-------------왼쪽 화살표 영역-------------*/
+.box1 .fav_wrap .contents .left_arrow {
+    box-sizing: border-box;
+    float: left;
+    width: 81px;
+    height: 270px;
+    text-align: right;
+}
+.box1 .fav_wrap .contents .left_arrow img {
+    margin-top: 150px;
+}
+/*-------------가운데 메뉴 영역-------------*/
+.box1 .fav_wrap .contents .favbox {
+    box-sizing: border-box;
+    overflow: hidden;
+    float: left;
+    width: 300px;
+    height: 270px;
+    text-align: center;
+}
+.box1 .fav_wrap .contents .favbox h3 {
+    font-family: Pretendard;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 43px;
+    color: var(--mcdonald-black);
+}
+/* 애니메이션 효과 */
+.box1 .fav_wrap .contents .favbox .fav_menu1 img {
+    transition: 0.3s;
+}
+.box1 .fav_wrap .contents .favbox .fav_menu1 img:hover {
+    transform: scale(1.1);
+}
+
+/*-------------오른쪽 화살표 영역-------------*/
+.box1 .fav_wrap .contents .right_arrow {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 81px;
+    height: 270px;
+    text-align: left;
+}
+.box1 .fav_wrap .contents .right_arrow img {
+    margin-top: 150px;
+}
+/*-------------하단 스크롤바 영역-------------*/
+.box1 .fav_wrap .contents .scroll_bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 464px;
+    height: 73px;
+    text-align: center;
+}
+.box1 .fav_wrap .contents .scroll_bar img{
+    margin-top: 15px;
+}
+
+
+/* ■■■■■■ 두 번째 콘텐츠 박스 ■■■■■■ */
+.box2 {
+    clear: both;
+    position: relative;
+    width: 1185px;
+    height: 750px;
+    margin: auto;
+}
+
+.box2 h2 {
+    font-family: Pretendard;
+    font-size: 35.92px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.box2 p {
+    font-family: Pretendard;
+    font-size: 14.02px;
+    font-weight: 400;
+    color: var(--mcdonald-gray);
+}
+
+.box2 .event_wrap {
+    position: absolute;
+    width: 1185px;
+    height: 475px;
+    margin-top: 157px;
+}
+.box2 .event_wrap .title .left {float: left;}
+.box2 .event_wrap .title .right {float: right;}
+.box2 .event_wrap .contents {clear: both; padding-top: 26px;}
+
+.box2 .event_wrap .contents .events {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box2 .event_wrap .contents .events li {
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 366px;
+    height: 395px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+.box2 .event_wrap .contents .events li h4 {
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 22px;
+    margin-left: 19px;
+    color: var(--mcdonald-black);
+}
+
+.box2 .event_wrap .contents .events li p {
+    margin-top: 7px;
+    margin-left: 19px;
+}
+
+.box2 .event_wrap .contents .events li .thumbnail {
+    width: 366px;
+    height: 300px;
+    overflow: hidden;
+}
+
+/*이미지 마우스오버 효과*/
+.box2 .event_wrap .contents .events li .thumbnail img {transition: 0.3s;}
+
+.box2 .event_wrap .contents .events li .thumbnail img:hover {
+    transform: scale(1.05);
+}
+
+/*-------------더보기 버튼 설정-------------*/
+.box2 button {
+    transition: 0.3s;
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    background-color: var(--mcdonald-lightgray);
+    border: none;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.box2 button:hover {
+    background-color: var(--mcdonald-yellow);
+}
+
+/* ■■■■■■ 세 번째 콘텐츠 박스 ■■■■■■ */
+
+hr {
+    background: var(--mcdonald-lightgray);
+    height: 1px;
+    border: 0;
+}
+
+.notice_wrap {
+    clear: both;
+    position: relative;
+    width: 1185px;
+    height: 300px;
+    margin: auto;
+}
+
+.notice_wrap .container {
+    position: absolute;
+    top: 42px;
+}
+
+.notice_wrap .container h4 {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--mcdonald-gray);
+    margin-bottom: 25px;
+}
+
+.notice_wrap .container .notice li {
+    font-family: Pretendard;
+    font-size: 13.89px;
+    font-weight: 500;
+    color: var(--mcdonald-gray);
+    margin-bottom: 8px;
+}
+
+
+/* ■■■■■■ 푸터 ■■■■■■ */
+.footer {
+    outline: auto;
+    background-color: var(--mcdonald-footer);
+    width: 100%;
+    height: 262px;
+    position: relative;
+    bottom: 0;
+}
+
+.footer .footer_menu {
+    box-sizing: border-box;
+    width: 1185px;
+    height: 80px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.footer .footer_menu li a {
+    float: left;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 8px;
+    margin-right: 50px;
+}
+
+.footer .footer_menu li span a {
+    color: var(--mcdonald-yellow);
+}
+
+.footer hr {
+    clear: both;
+    background: rgb(78, 78, 78);
+    height: 1px;
+    border: 0;
+}
+
+.footer .contents {
+    width: 1185px;
+    margin: auto;
+    margin-top: 30px;   
+}
+
+.footer .contents p {
+    font-family: Pretendard;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--mcdonald-gray);
+    margin-bottom: 20px;
+}

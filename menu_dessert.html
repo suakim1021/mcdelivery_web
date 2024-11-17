@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴소개</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
+        /*----현재 선택중인 탭 메뉴----*/
+        .tab_wrap .tab_menu ul li:nth-child(6) {
+            border-bottom: 4px solid var(--mcdonald-red);
+        }
+        .tab_wrap .tab_menu ul li:nth-child(6) a {
+            color: var(--mcdonald-red);
+        }
+    </style>
+</head>
+<body>
+    <!--■■■■■■■■ 내비게이션 ■■■■■■■■-->
+    <div class="navigation">
+        <div class="nav_wrap">
+            <h1><a href="index.html"><img src="images/icon/logo.png" alt="맥딜리버리 로고"></a></h1>
+            <ul class="menu">
+                <li>
+                    <a href="menu_best.html">메뉴소개</a>
+                    <ul class="submenu">
+                        <li><a href="menu_best.html">추천 메뉴</a></li>
+                        <li><a href="menu_burger.html">버거 & 세트</a></li>
+                        <li><a href="menu_snack.html">스낵 & 사이드</a></li>
+                        <li><a href="menu_drink.html">음료</a></li>
+                        <li><a href="menu_dessert.html">디저트</a></li>
+                        <li><a href="menu.happy.html">해피밀®</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="my_order.html">마이페이지</a>
+                    <ul class="submenu">
+                        <li><a href="#">주문 조회</a></li>
+                        <li><a href="my_order.html">주문 내역</a></li>
+                        <li><a href="#">즐겨찾기 메뉴</a></li>
+                        <li><a href="#">주소록</a></li>
+                        <li><a href="#">계정 설정</a></li>
+                        <li><a href="#">비밀번호 변경</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">매장정보</a>
+                    <ul class="submenu_short">
+                        <li><a href="#">과일 칠러 판매 제외 매장</a></li>
+                        <li><a href="#">영양정보/원산지 정보</a></li>
+                        <li><a href="#">기타 정보</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                    <ul class="submenu_short">
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="minimenu">
+                        <li><button><a href="#">로그인</a></button></li>
+                        <li><button><a href="#">주문조회</a></button></li>
+                        <li><button><a href="#">ENGLISH</a></button></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--■■■■■■■■ 내비게이션 하단 탭 바 ■■■■■■■■-->
+    <div class="tab_wrap">
+        <div class="tab_menu">
+            <ul>
+                <li><a href="menu_best.html">추천 메뉴</a></li>
+                <li><a href="menu_burger.html">버거 & 세트</a></li>
+                <li><a href="menu_morning.html">맥모닝 & 세트</a></li>
+                <li><a href="menu_snack.html">스낵 & 사이드</a></li>
+                <li><a href="menu_drink.html">음료</a></li>
+                <li><a href="menu_dessert.html">디저트</a></li>
+                <li><a href="menu.happy.html">해피밀</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--■■■■■■■■ 메뉴 이름 배너 ■■■■■■■■-->
+    <section id="home">
+        <div class="title_banner">
+            <div class="text_wrap">
+                <h2>DESSERT</h2>
+                <p>오직 맥도날드에서만 즐길 수 있는 오리지널 디저트</p>
+            </div>
+        </div>
+    </section>
+
+    <!--■■■■■■■■ 장바구니 플로팅 버튼 ■■■■■■■■-->
+    <button class="my_cart"></button>
+
+    <!--■■■■■■■■ 백투탑 플로팅 버튼 ■■■■■■■■-->
+    <button class="arrow-up"></button>
+
+    <!--■■■■■■■■ 메뉴판 ■■■■■■■■-->
+    <div class="menu_list">
+        <p>● 메뉴 주문 시간 안내</p>
+        <ul class="menu_burger">
+            <li>
+                <img src="images/menu_image/dsrt_01.png" alt="">
+                <h3>자두 천도복숭아 칠러</h3>
+                <h4>3,700원</h4>
+                <p>237 Kcal</p>
+                <button></button>
+            </li>
+            <li>
+                <img src="images/menu_image/dsrt_02.png" alt="">
+                <h3>제주 한라봉 칠러</h3>
+                <h4>3,700원</h4>
+                <p>236 Kcal</p>
+                <button></button>
+            </li>
+            <li>
+                <img src="images/menu_image/dsrt_03.png" alt="">
+                <h3>오레오 맥플러리</h3>
+                <h4>4,000원</h4>
+                <p>332 Kcal</p>
+                <button></button>
+            </li>
+            <li>
+                <img src="images/menu_image/dsrt_04.png" alt="">
+                <h3>베리 스트로베리 맥플러리</h3>
+                <h4>4,000원</h4>
+                <p>325 Kcal</p>
+                <button></button>
+            </li>
+        </ul>
+    </div>
+
+    <!--■■■■■■■■ 유의사항 ■■■■■■■■-->
+    <hr>
+    <div class="notice_wrap">
+        <div class="container">
+            <h4>유의사항</h4>
+            <ul class="notice">
+                <li>□  매장 별 무료 배달 주문 금액 및 소액 주문비는 다르게 운영될 수 있으며, 주문 시 결제 페이지에서 미리 확인하실 수 있습니다.</li>
+                <li>□  일회용품 사용 여부를 주문 시 체크해주세요. '사용'을 체크하신 주문만 일회용품이 제공됩니다.</li>
+                <li>□  정부 지침에 따라 제주도에서는 일회용컵 제품 1개당 300원의 컵보증금이 부과됩니다.</li>
+                <li>□  맥딜리버리 가격은 매장과 상이합니다.</li>
+                <li>□  상기 이미지들은 실제와 다를 수 있습니다.</li>
+            </ul>
+        </div>
+        
+    </div>
+
+
+    <!--■■■■■■■■ 푸터 ■■■■■■■■-->
+    <div class="footer">
+        <ul class="footer_menu">
+            <li><a href="#">이용약관</a></li>
+            <li><span><a href="#">개인정보처리방침</a></span></li>
+            <li><a href="#">자주 묻는 질문</a></li>
+            <li><a href="#">모바일 웹</a></li>
+        </ul>
+        <hr>
+        <div class="contents">
+            <p class="contact">한국맥도날드(유) | 대표자: 앤토니 마티네즈 | 서울특별시 종로구 종로 51 종로타워 14층 | 전화번호: 1600-5252 | 사업자등록번호: 101-81-26409 | 호스팅서비스 제공자: 아마존 웹 서비스</p>
+            <p class="copyright">COPYRIGHT © 2014 ALL RIGHTS RESERVED BY MCDONALD'S™</br>골든 아치 로고와 "I'M LOVIN' IT"은 맥도날드 고유의 상표입니다.</p>
+        </div>
+    </div>
+
+    <script>
+        // 카테고리 버튼 누르면 각 페이지로 스크롤 이동
+        const sectionHome = document.querySelector('#home');
+
+        // 탑 페이지로 돌아가는 버튼 표시
+        const arrowUp = document.querySelector('.arrow-up')
+        document.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');
+            } else {
+                arrowUp.classList.remove('show');
+            }
+        })
+        arrowUp.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth", block:'center'})
+        })
+    </script>
+</body>
+</html>
